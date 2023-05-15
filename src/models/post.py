@@ -1,6 +1,7 @@
 from src.models.base import BaseModel
 from src.extensions import db
 from datetime import datetime
+from slugify import slugify
 
 
 class Post(BaseModel):
@@ -18,3 +19,6 @@ class Post(BaseModel):
         'author.id', ondelete='SET NULL'))
     author = db.relationship("Author", backref='posts')
     tags = db.relationship('Tag', secondary='post_tags', backref='posts')
+
+    def generate_slug(self):
+        self.slug = slugify(self.title)

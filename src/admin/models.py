@@ -39,12 +39,9 @@ class PostModelView(SecureModelView):
     column_list = ['title', 'date', 'author']
     column_filters = ["author", "tags", "date"]
 
-    def on_form_prefill(self, form, id):
-        title = form.title.data
-        # slug = title.lower().replace(" ", "-")
-        slug = slugify(title)
-
-        form.slug.data = slug
+    def on_model_change(self, form, model, is_created):
+        model.generate_slug()
+        model.create()
 
 
 class TagModelView(SecureModelView):

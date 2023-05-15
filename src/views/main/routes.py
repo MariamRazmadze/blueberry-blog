@@ -32,10 +32,12 @@ def posts():
 @main_blueprint.route("/posts/<slug>")
 def post_detail(slug):
     identified_post = Post.query.filter_by(slug=slug).first()
+
     context = {
         "post": identified_post
     }
 
     if not identified_post:
         abort(404)
+
     return render_template("main/post-detail.html", context=context)
