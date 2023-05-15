@@ -1,0 +1,9 @@
+Flask
+Flask-Admin
+Flask-JWT
+Flask-Login
+Flask-Migrate
+Flask-SQLAlchemy
+Flask-WTF
+email_validator
+python-slugify

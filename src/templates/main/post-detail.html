@@ -1,0 +1,22 @@
+{%extends "layouts/base.html"%} {%block title%} {{context.post.title}}
+{%endblock%} {%block css_files%}
+<link
+  href=" {{ url_for('static', filename='post-detail.css') }}"
+  rel="stylesheet"
+/>
+{%endblock%} {%block content%}
+<section id="summary">
+  <h2>{{context.post.title}}</h2>
+  <article>
+    <img
+      src="{{ url_for('static', filename='images/' ~ context.post.image_name) }}"
+      alt="{{ context.post.title }}"
+    />
+    <address>By {{context.post.author}}</address>
+    <div>
+      Last updated on <time>{{ context.post.date.strftime('%d %b %Y') }}</time>
+    </div>
+  </article>
+</section>
+<main>{{ context.post.content | replace('\n', '<br />') | safe }}</main>
+{%endblock%}
