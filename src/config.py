@@ -8,3 +8,5 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + path.join(BASE_DIR, 'db.sqlite')
     FLASK_ADMIN_SWATCH = 'united'
+    UPLOAD_FOLDER = path.join(BASE_DIR, '..', 'uploads')
+    STATIC_URL_PATH = '/files'
