@@ -105,7 +105,7 @@ main {
 /* Tablet view */
 @media (min-width: 768px) and (max-width: 1023px) {
   #summary {
-    margin: 5rem auto 3rem auto;
+    margin: 7rem auto 3rem auto;
     padding: 2.5rem;
   }
 
