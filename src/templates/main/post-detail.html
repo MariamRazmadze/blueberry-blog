@@ -13,8 +13,9 @@
       alt="{{ context.post.title }}"
     />
     <address>By {{context.post.author}}</address>
-    <div>
-      Last updated on <time>{{ context.post.date.strftime('%d %b %Y') }}</time>
+    <div id="paragraph">
+      Last updated on
+      <time>{{ context.post.date.strftime('%d %b %Y') }}</time>
     </div>
   </article>
 </section>

@@ -1,35 +1,32 @@
-{%extends "layouts/base.html"%}
-
-{%block head%}
-მარიამის ბლოგი
-{%endblock%}
+{%extends "layouts/base.html"%} {%block head%} მარიამის ბლოგი {%endblock%}
 {%block css_files%}
-<link href=" {{ url_for('static', filename='post.css') }}" rel="stylesheet">
-<link href=" {{ url_for('static', filename='index.css') }}" rel="stylesheet">
-{%endblock%}
-{%block content%}
+<link href=" {{ url_for('static', filename='post.css') }}" rel="stylesheet" />
+<link href=" {{ url_for('static', filename='index.css') }}" rel="stylesheet" />
+{%endblock%} {%block content%}
 <section id="welcome">
-    <header>
-        <img src="{{url_for('static', filename='images/mariam.png')}}" alt="Mariam - The author of this Blog" />
-        <h2>მარიამის ბლოგი</h2>
-    </header>
-    <p>გამარჯობა, მე მარიამი ვარ და ვწერ ტექ-ბლოგს</p>
+  <header>
+    <img
+      src="{{url_for('static', filename='images/mariam.png')}}"
+      alt="Mariam - The author of this Blog"
+    />
+    <h2>მარიამის ბლოგი</h2>
+  </header>
+  <p>გამარჯობა, მე მარიამი ვარ და ვწერ ტექ-ბლოგს</p>
 </section>
 <section id="latest-posts">
-    <h2>ჩემი უახლესი პოსტები</h2>
-    <ul>
-        {%for post in context.posts%}
-        {%include "includes/post.html"%}
-        {%endfor%}
-    </ul>
+  <h2>ჩემი უახლესი პოსტები</h2>
+  <ul>
+    {%for post in context.posts%} {%include "includes/post.html"%} {%endfor%}
+  </ul>
 </section>
 <section id="about">
-    <h2>ჩემ შესახებ </h2>
-    <p>
-        მე ვარ ტექ-ენთუზიასტი, რომელსაც ძალიან უყვარს ახალ ტექნოლოგიებში გარკვევა. 
-    </p>
-    <p>
-        ჩემი მიზანია, უწყვეტად განვვითარდე, როგორც დეველოპერი და სხვებსაც დავეხმარო ამაში. 
-    </P>
+  <h2>ჩემ შესახებ</h2>
+  <p>
+    მე ვარ ტექ-ენთუზიასტი, რომელსაც ძალიან უყვარს ახალ ტექნოლოგიებში გარკვევა.
+  </p>
+  <p>
+    ჩემი მიზანია, უწყვეტად განვვითარდე, როგორც დეველოპერი და სხვებსაც დავეხმარო
+    ამაში.
+  </p>
 </section>
 {%endblock%}
